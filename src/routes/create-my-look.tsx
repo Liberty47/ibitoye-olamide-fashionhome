@@ -26,13 +26,13 @@ export const Route = createFileRoute("/create-my-look")({
   }),
   head: () => ({
     meta: [
-      { title: "Create My Look — Vanessa Atelier" },
+      { title: "Create My Look — Ibitoye Olamide Fashionhome" },
       {
         name: "description",
         content:
           "Tell us about your dream outfit and our Benin City atelier will bring it to life, made to your measurements.",
       },
-      { property: "og:title", content: "Create My Look — Vanessa Atelier" },
+      { property: "og:title", content: "Create My Look — Ibitoye Olamide Fashionhome" },
       {
         property: "og:description",
         content: "Tell us about your dream outfit and we'll bring it to life.",

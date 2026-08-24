@@ -19,13 +19,13 @@ import { designs, formatNaira, heroImage } from "@/data/atelier";
 export const Route = createFileRoute("/collections")({
   head: () => ({
     meta: [
-      { title: "Dresses & Collections — Vanessa Atelier" },
+      { title: "Dresses & Collections — Ibitoye Olamide Fashionhome" },
       {
         name: "description",
         content:
           "Browse custom-made dresses, native wear, bridal and corporate looks crafted to fit you perfectly in Benin City, Nigeria.",
       },
-      { property: "og:title", content: "Dresses & Collections — Vanessa Atelier" },
+      { property: "og:title", content: "Dresses & Collections — Ibitoye Olamide Fashionhome" },
       {
         property: "og:description",
         content: "Custom-made dresses crafted to fit you perfectly and tell your story.",

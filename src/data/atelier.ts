@@ -13,14 +13,14 @@ import btsPacked from "@/assets/bts-packed.jpg";
 import hero from "@/assets/hero-atelier.jpg";
 
 export const BRAND = {
-  name: "Vanessa Atelier",
+  name: "Ibitoye Olamide Fashionhome",
   tagline: "Made For You",
   city: "Benin City",
   country: "Nigeria",
   clients: 127,
   whatsapp: "2348012345678",
   whatsappDisplay: "080 1234 5678",
-  instagram: "@vanessa.atelier",
+  instagram: "@ibitoye.olamide.fashionhome",
 };
 
 export const waLink = (message: string) =>
@@ -193,7 +193,7 @@ export const testimonials = [
   {
     name: "Chidinma E.",
     quote:
-      "They listened to every detail I described and delivered ahead of time. Vanessa Atelier is my go-to now.",
+      "They listened to every detail I described and delivered ahead of time. Ibitoye Olamide Fashionhome is my go-to now.",
   },
 ];
 

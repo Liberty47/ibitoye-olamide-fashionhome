@@ -21,13 +21,13 @@ export const Route = createFileRoute("/request-received")({
   }),
   head: () => ({
     meta: [
-      { title: "Request Received — Vanessa Atelier" },
+      { title: "Request Received — Ibitoye Olamide Fashionhome" },
       {
         name: "description",
         content:
-          "Thank you for choosing Vanessa Atelier. We'll reach out on WhatsApp to discuss your look and next steps.",
+          "Thank you for choosing Ibitoye Olamide Fashionhome. We'll reach out on WhatsApp to discuss your look and next steps.",
       },
-      { property: "og:title", content: "Request Received — Vanessa Atelier" },
+      { property: "og:title", content: "Request Received — Ibitoye Olamide Fashionhome" },
       {
         property: "og:description",
         content: "We've received your request and will reach out on WhatsApp shortly.",
@@ -55,7 +55,7 @@ function RequestReceivedPage() {
       <section className="relative mx-4 mt-4 overflow-hidden rounded-3xl border border-border">
         <img
           src={bag}
-          alt="Vanessa Atelier gift bag with a thank you card"
+          alt="Ibitoye Olamide Fashionhome gift bag with a thank you card"
           width={928}
           height={720}
           className="absolute inset-0 size-full object-cover"
@@ -108,7 +108,7 @@ function RequestReceivedPage() {
         <div className="mt-4 flex items-center gap-3 rounded-xl bg-accent/40 p-3">
           <img
             src={clientAvatar}
-            alt="Vanessa, lead designer"
+            alt="Ibitoye Olamide, lead designer"
             loading="lazy"
             width={512}
             height={512}
@@ -137,7 +137,7 @@ function RequestReceivedPage() {
           </p>
         </div>
         <a
-          href={waLink("Hi Vanessa Atelier, I just sent a request and I need help.")}
+          href={waLink("Hi Ibitoye Olamide Fashionhome, I just sent a request and I need help.")}
           target="_blank"
           rel="noreferrer"
           className="shrink-0 rounded-full bg-[var(--whatsapp)] px-4 py-2.5 text-[11px] font-semibold text-primary-foreground"
