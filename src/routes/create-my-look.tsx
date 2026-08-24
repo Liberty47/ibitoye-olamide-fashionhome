@@ -54,7 +54,9 @@ const requestTypes = [
 function CreateMyLookPage() {
   const { design } = Route.useSearch();
   const navigate = useNavigate();
-  const selectedDesign = designs.find((d) => d.id === design);
+
+  const [designId, setDesignId] = useState<string | undefined>(design);
+  const selectedDesign = designs.find((d) => d.id === designId);
 
   const [type, setType] = useState(design ? "exact" : "custom");
   const [name, setName] = useState("");
@@ -74,6 +76,7 @@ function CreateMyLookPage() {
       `Hi ${BRAND.name}, I'd like to create my look.`,
       `Request type: ${chosen}`,
       selectedDesign ? `Design: ${selectedDesign.name}` : null,
+      selectedDesign ? `Reference image: ${window.location.origin}${selectedDesign.image}` : null,
       `Name: ${name}`,
       `WhatsApp: ${phone}`,
       `Preferred contact: ${contact}`,
@@ -172,6 +175,70 @@ function CreateMyLookPage() {
             ))}
           </div>
         </fieldset>
+
+        {type !== "custom" && (
+          <fieldset className="mt-6">
+            <legend className="text-sm font-semibold text-foreground">
+              {selectedDesign ? "Your reference design" : "Pick a design to reference"}
+            </legend>
+            <p className="text-[11px] text-muted-foreground">
+              {selectedDesign
+                ? "We'll use this piece as the reference for your custom wear."
+                : "Choose the piece closest to what you have in mind."}
+            </p>
+
+            {selectedDesign && (
+              <div className="mt-3 flex items-center gap-3 rounded-2xl border border-primary/40 bg-accent/40 p-3">
+                <img
+                  src={selectedDesign.image}
+                  alt={selectedDesign.name}
+                  loading="lazy"
+                  width={400}
+                  height={550}
+                  className="h-20 w-16 rounded-lg object-cover"
+                />
+                <div className="flex-1">
+                  <p className="text-xs font-semibold text-foreground">{selectedDesign.name}</p>
+                  <p className="mt-0.5 text-[10px] text-muted-foreground">
+                    {selectedDesign.blurb}
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => setDesignId(undefined)}
+                    className="mt-1 text-[10px] font-medium text-primary underline"
+                  >
+                    Change design
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {!selectedDesign && (
+              <div className="mt-3 grid grid-cols-3 gap-2">
+                {designs.map((d) => (
+                  <button
+                    type="button"
+                    key={d.id}
+                    onClick={() => setDesignId(d.id)}
+                    className="overflow-hidden rounded-xl border border-border bg-card text-left"
+                  >
+                    <img
+                      src={d.image}
+                      alt={d.name}
+                      loading="lazy"
+                      width={400}
+                      height={550}
+                      className="h-24 w-full object-cover"
+                    />
+                    <span className="block px-2 py-1.5 text-[9px] font-medium leading-tight text-foreground">
+                      {d.name}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            )}
+          </fieldset>
+        )}
 
         <fieldset className="mt-6 rounded-2xl border border-border bg-card p-4">
           <legend className="px-1 text-sm font-semibold text-foreground">
