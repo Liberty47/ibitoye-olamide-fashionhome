@@ -115,7 +115,7 @@ export function ExitSheet() {
               <MessageSquare className="size-3.5" /> Your message will include:
             </p>
             <p className="mt-2 rounded-lg bg-muted p-3 text-xs text-foreground">
-              {messages[reason]}
+              {message}
               <span className="mt-1 block text-right text-[10px] text-muted-foreground">
                 11:30 AM
               </span>
@@ -124,7 +124,7 @@ export function ExitSheet() {
         </div>
 
         <a
-          href={waLink(messages[reason])}
+          href={waLink(message)}
           target="_blank"
           rel="noreferrer"
           className="mt-5 flex w-full items-center justify-center gap-2 rounded-full bg-[var(--whatsapp)] py-3.5 text-sm font-semibold text-primary-foreground"
