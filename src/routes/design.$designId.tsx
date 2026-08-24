@@ -86,9 +86,9 @@ function DesignPage() {
             Watch Full Look
           </span>
         </div>
-        <div className="grid grid-rows-3 gap-2 overflow-hidden">
+        <div className="grid min-h-0 grid-rows-3 gap-2 overflow-hidden">
           {clientPhotos.map((p, i) => (
-            <div key={i} className="relative overflow-hidden rounded-xl">
+            <div key={i} className="relative min-h-0 overflow-hidden rounded-xl">
               <img
                 src={p}
                 alt={`${design.name} detail ${i + 1}`}
