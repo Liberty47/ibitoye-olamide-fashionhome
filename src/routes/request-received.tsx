@@ -184,7 +184,7 @@ function RequestReceivedPage() {
           <p className="text-[10px] text-muted-foreground">Create a new request anytime.</p>
         </div>
         <Link
-          to="/create-my-look"
+          to="/create-my-look" search={{ design: undefined }}
           className="shrink-0 rounded-full border border-primary px-4 py-2.5 text-[11px] font-semibold text-primary"
         >
           Create Another Request →

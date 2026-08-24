@@ -56,7 +56,7 @@ function ProfilePage() {
         </div>
 
         <Link
-          to="/create-my-look"
+          to="/create-my-look" search={{ design: undefined }}
           className="mt-6 flex w-full items-center justify-center rounded-full bg-primary py-3.5 text-sm font-semibold text-primary-foreground"
         >
           Create My Look

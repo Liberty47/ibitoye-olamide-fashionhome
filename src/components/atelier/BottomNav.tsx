@@ -40,7 +40,7 @@ export function BottomNav() {
 
         <div className="flex flex-col items-center">
           <Link
-            to="/create-my-look"
+            to="/create-my-look" search={{ design: undefined }}
             aria-label="Create My Look"
             className="-mt-7 flex size-13 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-[0_8px_20px_-6px_var(--gold-shadow)] ring-4 ring-card"
             style={{ width: "3.25rem", height: "3.25rem" }}

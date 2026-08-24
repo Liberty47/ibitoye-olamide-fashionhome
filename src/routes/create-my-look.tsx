@@ -3,7 +3,8 @@ import { useState, type FormEvent } from "react";
 import {
   CalendarDays,
   Gift,
-  Hanger,
+  ShoppingBag,
+
   MapPin,
   MessageSquare,
   Plus,
@@ -47,7 +48,7 @@ const requestTypes = [
   { id: "exact", icon: Shirt, title: "This Design", sub: "I want this exact design" },
   { id: "similar", icon: UserRound, title: "Something Similar", sub: "I like the style but want changes" },
   { id: "custom", icon: Spool, title: "Custom Design", sub: "I have my own idea in mind" },
-  { id: "rtw", icon: Hanger, title: "Ready-to-Wear", sub: "I want to buy from what's available" },
+  { id: "rtw", icon: ShoppingBag, title: "Ready-to-Wear", sub: "I want to buy from what's available" },
 ];
 
 function CreateMyLookPage() {
