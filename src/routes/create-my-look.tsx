@@ -76,6 +76,7 @@ function CreateMyLookPage() {
       `Hi ${BRAND.name}, I'd like to create my look.`,
       `Request type: ${chosen}`,
       selectedDesign ? `Design: ${selectedDesign.name}` : null,
+      selectedDesign ? `Reference image: ${window.location.origin}${selectedDesign.image}` : null,
       `Name: ${name}`,
       `WhatsApp: ${phone}`,
       `Preferred contact: ${contact}`,
