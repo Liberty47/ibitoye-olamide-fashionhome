@@ -11,8 +11,10 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CollectionsRouteImport } from './routes/collections'
+import { Route as CreateMyLookRouteImport } from './routes/create-my-look'
 import { Route as MessagesRouteImport } from './routes/messages'
 import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as RequestReceivedRouteImport } from './routes/request-received'
 import { Route as DesignDesignIdRouteImport } from './routes/design.$designId'
 
 const IndexRoute = IndexRouteImport.update({
@@ -25,6 +27,11 @@ const CollectionsRoute = CollectionsRouteImport.update({
   path: '/collections',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CreateMyLookRoute = CreateMyLookRouteImport.update({
+  id: '/create-my-look',
+  path: '/create-my-look',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MessagesRoute = MessagesRouteImport.update({
   id: '/messages',
   path: '/messages',
@@ -33,6 +40,11 @@ const MessagesRoute = MessagesRouteImport.update({
 const ProfileRoute = ProfileRouteImport.update({
   id: '/profile',
   path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RequestReceivedRoute = RequestReceivedRouteImport.update({
+  id: '/request-received',
+  path: '/request-received',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DesignDesignIdRoute = DesignDesignIdRouteImport.update({
@@ -44,45 +56,68 @@ const DesignDesignIdRoute = DesignDesignIdRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/collections': typeof CollectionsRoute
+  '/create-my-look': typeof CreateMyLookRoute
   '/messages': typeof MessagesRoute
   '/profile': typeof ProfileRoute
+  '/request-received': typeof RequestReceivedRoute
   '/design/$designId': typeof DesignDesignIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/collections': typeof CollectionsRoute
+  '/create-my-look': typeof CreateMyLookRoute
   '/messages': typeof MessagesRoute
   '/profile': typeof ProfileRoute
+  '/request-received': typeof RequestReceivedRoute
   '/design/$designId': typeof DesignDesignIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/collections': typeof CollectionsRoute
+  '/create-my-look': typeof CreateMyLookRoute
   '/messages': typeof MessagesRoute
   '/profile': typeof ProfileRoute
+  '/request-received': typeof RequestReceivedRoute
   '/design/$designId': typeof DesignDesignIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/collections' | '/messages' | '/profile' | '/design/$designId'
+    | '/'
+    | '/collections'
+    | '/create-my-look'
+    | '/messages'
+    | '/profile'
+    | '/request-received'
+    | '/design/$designId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/collections' | '/messages' | '/profile' | '/design/$designId'
+  to:
+    | '/'
+    | '/collections'
+    | '/create-my-look'
+    | '/messages'
+    | '/profile'
+    | '/request-received'
+    | '/design/$designId'
   id:
     | '__root__'
     | '/'
     | '/collections'
+    | '/create-my-look'
     | '/messages'
     | '/profile'
+    | '/request-received'
     | '/design/$designId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CollectionsRoute: typeof CollectionsRoute
+  CreateMyLookRoute: typeof CreateMyLookRoute
   MessagesRoute: typeof MessagesRoute
   ProfileRoute: typeof ProfileRoute
+  RequestReceivedRoute: typeof RequestReceivedRoute
   DesignDesignIdRoute: typeof DesignDesignIdRoute
 }
 
@@ -102,6 +137,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CollectionsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/create-my-look': {
+      id: '/create-my-look'
+      path: '/create-my-look'
+      fullPath: '/create-my-look'
+      preLoaderRoute: typeof CreateMyLookRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/messages': {
       id: '/messages'
       path: '/messages'
@@ -114,6 +156,13 @@ declare module '@tanstack/react-router' {
       path: '/profile'
       fullPath: '/profile'
       preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/request-received': {
+      id: '/request-received'
+      path: '/request-received'
+      fullPath: '/request-received'
+      preLoaderRoute: typeof RequestReceivedRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/design/$designId': {
@@ -129,8 +178,10 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CollectionsRoute: CollectionsRoute,
+  CreateMyLookRoute: CreateMyLookRoute,
   MessagesRoute: MessagesRoute,
   ProfileRoute: ProfileRoute,
+  RequestReceivedRoute: RequestReceivedRoute,
   DesignDesignIdRoute: DesignDesignIdRoute,
 }
 export const routeTree = rootRouteImport
