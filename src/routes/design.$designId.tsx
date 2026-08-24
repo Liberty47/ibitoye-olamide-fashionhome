@@ -70,7 +70,7 @@ function DesignPage() {
     <AppShell>
       <TopBar showWishlist />
 
-      <section className="grid grid-cols-[2fr_1fr] gap-2 p-3">
+      <section className="grid h-96 grid-cols-[2fr_1fr] gap-2 p-3">
         <div className="relative overflow-hidden rounded-2xl">
           <img
             src={design.image}
@@ -86,7 +86,7 @@ function DesignPage() {
             Watch Full Look
           </span>
         </div>
-        <div className="grid grid-rows-3 gap-2">
+        <div className="grid grid-rows-3 gap-2 overflow-hidden">
           {clientPhotos.map((p, i) => (
             <div key={i} className="relative overflow-hidden rounded-xl">
               <img
