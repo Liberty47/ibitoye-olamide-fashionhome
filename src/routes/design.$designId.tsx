@@ -30,11 +30,11 @@ export const Route = createFileRoute("/design/$designId")({
   head: ({ loaderData }) => {
     if (!loaderData) {
       return {
-        meta: [{ title: "Design not found — Vanessa Atelier" }, { name: "robots", content: "noindex" }],
+        meta: [{ title: "Design not found — Ibitoye Olamide Fashionhome" }, { name: "robots", content: "noindex" }],
       };
     }
     const { design } = loaderData;
-    const title = `${design.name} — Vanessa Atelier`;
+    const title = `${design.name} — Ibitoye Olamide Fashionhome`;
     return {
       meta: [
         { title },
@@ -256,7 +256,7 @@ function DesignPage() {
             Create My Look <ArrowRight className="size-4" />
           </Link>
           <a
-            href={waLink(`Hi Vanessa Atelier, I'm interested in ${design.name}.`)}
+            href={waLink(`Hi Ibitoye Olamide Fashionhome, I'm interested in ${design.name}.`)}
             target="_blank"
             rel="noreferrer"
             className="flex items-center justify-center gap-2 rounded-full border border-[var(--whatsapp)] py-3.5 text-sm font-semibold text-[var(--whatsapp)]"

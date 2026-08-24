@@ -5,7 +5,7 @@ export function Wordmark({ compact = false }: { compact?: boolean }) {
       {!compact && (
         <span className="flex flex-col">
           <span className="font-display text-[13px] uppercase leading-tight tracking-[0.22em] text-foreground">
-            Vanessa Atelier
+            Ibitoye Olamide Fashionhome
           </span>
           <span className="text-[8px] uppercase tracking-[0.32em] text-muted-foreground">
             Made For You

@@ -32,13 +32,13 @@ import clientAvatar from "@/assets/client-blessing.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Vanessa Atelier — Custom Made Fashion in Benin City" },
+      { title: "Ibitoye Olamide Fashionhome — Custom Made Fashion in Benin City" },
       {
         name: "description",
         content:
           "Made for the woman who knows what she wants. Custom-made dresses, native wear and bridal, tailored to your measurements in Benin City, Nigeria.",
       },
-      { property: "og:title", content: "Vanessa Atelier — Custom Made Fashion in Benin City" },
+      { property: "og:title", content: "Ibitoye Olamide Fashionhome — Custom Made Fashion in Benin City" },
       {
         property: "og:description",
         content:
@@ -67,7 +67,7 @@ function Index() {
         <div className="relative overflow-hidden rounded-3xl">
           <img
             src={heroImage}
-            alt="Designer fitting a beaded couture gown in the Vanessa Atelier studio"
+            alt="Designer fitting a beaded couture gown in the Ibitoye Olamide Fashionhome studio"
             width={1200}
             height={912}
             className="h-64 w-full object-cover"

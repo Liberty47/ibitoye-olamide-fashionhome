@@ -7,15 +7,15 @@ import { BRAND } from "@/data/atelier";
 export const Route = createFileRoute("/profile")({
   head: () => ({
     meta: [
-      { title: "Your Profile — Vanessa Atelier" },
+      { title: "Your Profile — Ibitoye Olamide Fashionhome" },
       {
         name: "description",
-        content: "Your saved looks, measurements and requests with Vanessa Atelier.",
+        content: "Your saved looks, measurements and requests with Ibitoye Olamide Fashionhome.",
       },
-      { property: "og:title", content: "Your Profile — Vanessa Atelier" },
+      { property: "og:title", content: "Your Profile — Ibitoye Olamide Fashionhome" },
       {
         property: "og:description",
-        content: "Your saved looks, measurements and requests with Vanessa Atelier.",
+        content: "Your saved looks, measurements and requests with Ibitoye Olamide Fashionhome.",
       },
     ],
   }),

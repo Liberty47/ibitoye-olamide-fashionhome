@@ -77,13 +77,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Vanessa Atelier — Made For You" },
+      { title: "Ibitoye Olamide Fashionhome — Made For You" },
       {
         name: "description",
         content:
           "Custom-made fashion for the woman who knows what she wants. Benin City, Nigeria.",
       },
-      { name: "author", content: "Vanessa Atelier" },
+      { name: "author", content: "Ibitoye Olamide Fashionhome" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
