@@ -54,7 +54,9 @@ const requestTypes = [
 function CreateMyLookPage() {
   const { design } = Route.useSearch();
   const navigate = useNavigate();
-  const selectedDesign = designs.find((d) => d.id === design);
+
+  const [designId, setDesignId] = useState<string | undefined>(design);
+  const selectedDesign = designs.find((d) => d.id === designId);
 
   const [type, setType] = useState(design ? "exact" : "custom");
   const [name, setName] = useState("");
