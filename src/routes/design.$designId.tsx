@@ -77,7 +77,7 @@ function DesignPage() {
             alt={design.name}
             width={800}
             height={1100}
-            className="h-72 w-full object-cover"
+            className="absolute inset-0 size-full object-cover"
           />
           <span className="absolute bottom-3 left-3 flex items-center gap-2 rounded-full bg-card/90 py-1.5 pl-1.5 pr-3 text-[11px] text-foreground">
             <span className="flex size-6 items-center justify-center rounded-full bg-foreground text-background">
