@@ -41,6 +41,9 @@ export function ExitSheet() {
 
   if (!open) return null;
 
+  const message =
+    messages[reason] ?? "Hi, I visited your website and I have a question I'd like to ask.";
+
   return (
     <div className="fixed inset-0 z-50 flex items-end justify-center bg-foreground/40 px-0">
       <div className="mx-auto max-h-[92vh] w-full max-w-[480px] overflow-y-auto rounded-t-3xl bg-card px-5 pb-28 pt-3">
