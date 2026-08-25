@@ -155,10 +155,127 @@ export const designs: Design[] = [
   },
 ];
 
-export const readyToWear = [
-  { id: "luxe-shirt", name: "Luxe Shirt Dress", price: 45000, image: rtwShirt },
-  { id: "floral-midi", name: "Floral Midi", price: 38000, image: rtwFloral },
-  { id: "relaxed-coord", name: "Relaxed Co-ord", price: 42000, image: rtwCoord },
+export type Product = {
+  id: string;
+  name: string;
+  price: number;
+  image: string;
+  inStock: boolean;
+  blurb: string;
+  sizes: string[];
+  fit: "Midi" | "Maxi" | "Short" | "Evening";
+  category: string;
+};
+
+export const products: Product[] = [
+  {
+    id: "luxe-shirt",
+    name: "Luxe Shirt Dress",
+    price: 45000,
+    image: rtwShirt,
+    inStock: true,
+    blurb: "Crisp cotton shirt dress with a belted waist — ready to wear today.",
+    sizes: ["S", "M", "L", "XL"],
+    fit: "Midi",
+    category: "Ready to Wear",
+  },
+  {
+    id: "floral-midi",
+    name: "Floral Midi",
+    price: 38000,
+    image: rtwFloral,
+    inStock: true,
+    blurb: "Soft floral midi with a flattering flare hem.",
+    sizes: ["S", "M", "L"],
+    fit: "Midi",
+    category: "Ready to Wear",
+  },
+  {
+    id: "relaxed-coord",
+    name: "Relaxed Co-ord",
+    price: 42000,
+    image: rtwCoord,
+    inStock: false,
+    blurb: "Linen two piece in sage with drawstring detailing.",
+    sizes: ["M", "L", "XL"],
+    fit: "Short",
+    category: "Two Piece",
+  },
+  {
+    id: "ankara-luxe-rtw",
+    name: "Ankara Luxe Dress",
+    price: 75000,
+    image: ankara,
+    inStock: true,
+    blurb: "Premium wax print with puff sleeves and a wrapped hem.",
+    sizes: ["S", "M", "L"],
+    fit: "Midi",
+    category: "Native Wear",
+  },
+  {
+    id: "emerald-grace-rtw",
+    name: "Emerald Grace Dress",
+    price: 95000,
+    image: emerald,
+    inStock: false,
+    blurb: "Full length lace gown with sheer sleeves and a sculpted waist.",
+    sizes: ["S", "M"],
+    fit: "Maxi",
+    category: "Dresses",
+  },
+  {
+    id: "royal-purple-rtw",
+    name: "Royal Purple Gown",
+    price: 90000,
+    image: purple,
+    inStock: true,
+    blurb: "Structured bodice, flowing satin skirt, unforgettable entrance.",
+    sizes: ["S", "M", "L"],
+    fit: "Evening",
+    category: "Dresses",
+  },
+  {
+    id: "the-ceo-rtw",
+    name: "The CEO Dress",
+    price: 70000,
+    image: ceo,
+    inStock: true,
+    blurb: "Tailored blazer dress with gold hardware and a sharp shoulder.",
+    sizes: ["S", "M", "L", "XL"],
+    fit: "Midi",
+    category: "Corporate",
+  },
+  {
+    id: "gele-royale-rtw",
+    name: "Gele Royale Set",
+    price: 110000,
+    image: native,
+    inStock: false,
+    blurb: "Hand embroidered native wear with a matching gele.",
+    sizes: ["M", "L"],
+    fit: "Maxi",
+    category: "Native Wear",
+  },
+];
+
+export const readyToWear = products;
+
+export type Piece = { id: string; name: string; image: string; blurb: string };
+
+export const findPiece = (id?: string): Piece | undefined => {
+  if (!id) return undefined;
+  const d = designs.find((x) => x.id === id);
+  if (d) return { id: d.id, name: d.name, image: d.image, blurb: d.blurb };
+  const p = products.find((x) => x.id === id);
+  if (p) return { id: p.id, name: p.name, image: p.image, blurb: p.blurb };
+  return undefined;
+};
+
+export const referencePieces: Piece[] = [
+  ...designs.map((d) => ({ id: d.id, name: d.name, image: d.image, blurb: d.blurb })),
+  ...products
+    .filter((p) => !designs.some((d) => d.image === p.image))
+    .map((p) => ({ id: p.id, name: p.name, image: p.image, blurb: p.blurb })),
 ];
 
 export const categories = [
@@ -184,18 +301,25 @@ export const testimonials = [
     name: "Blessing O.",
     quote:
       "The process was so smooth and the dress was beyond my expectations. I felt like the best version of myself!",
+    piece: "The Amara Dress",
+    image: amara,
   },
   {
     name: "Ifeoma A.",
     quote:
-      "The dress was beyond my expectations. The fit, the fabric, everything was just perfect. I felt like a queen!",
+      "The fit, the fabric, everything was just perfect. I felt like a queen on my introduction day!",
+    piece: "Gele Royale Set",
+    image: native,
   },
   {
     name: "Chidinma E.",
     quote:
-      "They listened to every detail I described and delivered ahead of time. Ibitoye Olamide Fashionhome is my go-to now.",
+      "They listened to every detail I described and delivered ahead of time. My go-to atelier now.",
+    piece: "Royal Purple Gown",
+    image: purple,
   },
 ];
+
 
 export const clientPhotos = [amara, emerald, purple];
 
