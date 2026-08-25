@@ -112,46 +112,66 @@ function CollectionsPage() {
 
       <div className="grid grid-cols-2 gap-3 px-4 py-4">
         {list.map((d) => (
-          <Link
-            key={d.id}
-            to="/design/$designId"
-            params={{ designId: d.id }}
-            className="overflow-hidden rounded-2xl border border-border bg-card"
-          >
-            <div className="relative">
+          <div key={d.id} className="overflow-hidden rounded-2xl border border-border bg-card">
+            <Link to="/product/$productId" params={{ productId: d.id }} className="relative block">
               <img
                 src={d.image}
                 alt={d.name}
                 loading="lazy"
                 width={800}
                 height={1100}
-                className="h-52 w-full object-cover"
+                className="h-44 w-full object-cover"
               />
               <span className="absolute right-2 top-2 flex size-7 items-center justify-center rounded-full bg-card/85">
                 <Heart className="size-3.5 text-foreground" />
               </span>
-              <span className="absolute inset-0 m-auto flex size-9 items-center justify-center rounded-full bg-card/80">
-                <Play className="size-4 fill-foreground text-foreground" />
+              <span
+                className={`absolute left-2 top-2 flex items-center gap-1 rounded-full px-2 py-0.5 text-[9px] font-semibold ${
+                  d.inStock
+                    ? "bg-[var(--whatsapp)] text-primary-foreground"
+                    : "bg-foreground/70 text-background"
+                }`}
+              >
+                {d.inStock ? <PackageCheck className="size-2.5" /> : <PackageX className="size-2.5" />}
+                {d.inStock ? "In Stock" : "Out of Stock"}
               </span>
-            </div>
+            </Link>
             <div className="p-3">
-              <h2 className="text-[13px] font-medium text-foreground">{d.name}</h2>
-              <p className="mt-1 text-xs text-primary">From {formatNaira(d.price)}</p>
-              <p className="mt-1 line-clamp-2 text-[11px] leading-snug text-muted-foreground">
-                {d.blurb}
-              </p>
-              <div className="mt-2 flex items-center justify-between border-t border-border pt-2 text-[10px] text-muted-foreground">
-                <span className="flex items-center gap-1">
-                  <Clock className="size-3" /> {d.days}
-                </span>
-                <span className="flex items-center gap-1">
-                  <Scissors className="size-3" /> {d.madeToOrder ? "Custom Made" : "Ready"}
-                </span>
+              <Link to="/product/$productId" params={{ productId: d.id }}>
+                <h2 className="text-[13px] font-medium text-foreground">{d.name}</h2>
+                <p className="mt-1 text-xs text-primary">{formatNaira(d.price)}</p>
+                <p className="mt-1 line-clamp-2 text-[11px] leading-snug text-muted-foreground">
+                  {d.blurb}
+                </p>
+              </Link>
+
+              <div className="mt-3 flex flex-col gap-1.5">
+                {d.inStock ? (
+                  <Link
+                    to="/product/$productId"
+                    params={{ productId: d.id }}
+                    className="flex items-center justify-center gap-1 rounded-full bg-foreground py-2 text-[11px] font-semibold text-background"
+                  >
+                    <ShoppingBag className="size-3" /> Buy Now
+                  </Link>
+                ) : (
+                  <span className="flex items-center justify-center gap-1 rounded-full bg-muted py-2 text-[11px] font-semibold text-muted-foreground">
+                    <PackageX className="size-3" /> Out of Stock
+                  </span>
+                )}
+                <Link
+                  to="/create-my-look"
+                  search={{ design: d.id }}
+                  className="flex items-center justify-center gap-1 rounded-full border border-primary py-2 text-[11px] font-semibold text-primary"
+                >
+                  <Scissors className="size-3" /> Create Similar Design
+                </Link>
               </div>
             </div>
-          </Link>
+          </div>
         ))}
       </div>
+
 
       <div className="mx-4 mb-6 grid grid-cols-2 gap-3 rounded-2xl border border-border bg-card p-4">
         {trust.map(({ icon: Icon, title, sub }) => (
