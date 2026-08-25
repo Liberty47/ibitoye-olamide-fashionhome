@@ -50,7 +50,7 @@ const trust = [
 function CollectionsPage() {
   const [active, setActive] = useState<string>("All Dresses");
 
-  const list = designs.filter((d) => active === "All Dresses" || d.fit === active);
+  const list = products.filter((d) => active === "All Dresses" || d.fit === active);
 
   return (
     <AppShell>
