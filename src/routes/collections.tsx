@@ -2,11 +2,13 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import {
   ChevronDown,
-  Clock,
   Heart,
   LayoutGrid,
+  PackageCheck,
+  PackageX,
   Play,
   Scissors,
+  ShoppingBag,
   SlidersHorizontal,
   Sparkles,
   Truck,
@@ -14,7 +16,8 @@ import {
 } from "lucide-react";
 import { AppShell } from "@/components/atelier/AppShell";
 import { TopBar } from "@/components/atelier/TopBar";
-import { designs, formatNaira, heroImage } from "@/data/atelier";
+import { products, formatNaira, heroImage } from "@/data/atelier";
+
 
 export const Route = createFileRoute("/collections")({
   head: () => ({
